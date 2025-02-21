@@ -68,5 +68,11 @@ button {
   /* end of the reset */
 
 body {
-  background-color: blue;
+  background-color: lightgray;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
+
+
+
