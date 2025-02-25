@@ -71,12 +71,12 @@ body {
   background-color: lightgray;
   display: grid;
   grid-template-columns: .2fr 5fr;
-  grid-template-rows: .3fr 2fr .2fr;
+  grid-template-rows: .2fr 2fr .2fr;
   height: 100vh;
 }
 
 #theHeader {
-  background-color: aqua;
+  background-color: white;
   grid-column: 2/3;
   grid-row: 1/2;
 }
@@ -187,7 +187,32 @@ body {
   justify-content: center;
 }
 
+/* Style for the header*/
 
+.headerContainer {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+}
+
+.notification {
+  background: url("./images/Notification.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: calc(100% - 45%);
+  align-self: center;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 
 
