@@ -1,5 +1,12 @@
 import "./style.css";
-console.log(greeting);
+import { initialSidebar } from "./loadSidebar";
+
+function deployment () {
+    initialSidebar();
+}
+
+console.log("index js");
+deployment();
 
 
 //THE PLAN
