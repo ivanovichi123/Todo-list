@@ -68,27 +68,46 @@ function initialSidebar () {
     theSidebar.appendChild(theSidebarContainer);
 
     //Give text to all the p tags
-    document.querySelector(".p0").textContent = "Hi I am the profile picture";
-    document.querySelector(".p1").textContent = "Hi I am the search tag";
-    document.querySelector(".p2").textContent = "Hi I am the inbox tag";
-    document.querySelector(".p3").textContent = "Hi I am the friend tag";
-    document.querySelector(".p4").textContent = "Hi I am the today tag";
-    document.querySelector(".p5").textContent = "Hi I am the upcoming tag";
-    document.querySelector(".p6").textContent = "Hi I am the add more tag";
-    
-    //Give images to all the img tags
-    document.querySelector(".img0").textContent = "A";
-    document.querySelector(".img1").textContent = "B";
-    document.querySelector(".img2").textContent = "C";
-    document.querySelector(".img3").textContent = "D";
-    document.querySelector(".img4").textContent = "E";
-    document.querySelector(".img5").textContent = "F";
-    document.querySelector(".img6").textContent = "G";
+    document.querySelector(".p0").textContent = "Ivanovichi";
+    document.querySelector(".p1").textContent = "Search";
+    document.querySelector(".p2").textContent = "Inbox";
+    document.querySelector(".p3").textContent = "Friend";
+    document.querySelector(".p4").textContent = "Today";
+    document.querySelector(".p5").textContent = "Upcoming";
+    document.querySelector(".p6").textContent = "Add";
 
+    //Function that sets the divs to have a click event
+    const clickEvents = () => {
+        document.querySelector(".p0").addEventListener("click", () => {
+            alert("You click the profile");
+        })
 
-    
+        document.querySelector(".p1").addEventListener("click", () => {
+            alert("You click the search");
+        })
 
+        document.querySelector(".p2").addEventListener("click", () => {
+            alert("You click the inbox");
+        })
 
+        document.querySelector(".p3").addEventListener("click", () => {
+            alert("You click the friend");
+        })
+
+        document.querySelector(".p4").addEventListener("click", () => {
+            alert("You click the today");
+        })
+
+        document.querySelector(".p5").addEventListener("click", () => {
+            alert("You click the upcoming");
+        })
+
+        document.querySelector(".p6").addEventListener("click", () => {
+            alert("You click the add");
+        })
+    }
+
+    clickEvents();
 
 }
 // `
