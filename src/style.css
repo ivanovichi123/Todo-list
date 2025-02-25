@@ -71,7 +71,8 @@ body {
   background-color: lightgray;
   display: grid;
   grid-template-columns: .2fr 5fr;
-  grid-template-rows: .15fr 1fr 0.1fr;
+  grid-template-rows: .3fr 2fr .2fr;
+  height: 100vh;
 }
 
 #theHeader {
@@ -87,7 +88,7 @@ body {
 }
 
 #theProjectSpace {
-  background-color: brown;
+  background-color: lightgray;
   grid-column: 2/3;
   grid-row: 2/3;
 }
@@ -171,6 +172,9 @@ body {
 .sidebarContainer > div > p {
   cursor: pointer;
 }
+
+/* Style for the project space */
+
 
 
 

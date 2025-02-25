@@ -1,8 +1,10 @@
 import "./style.css";
 import { initialSidebar } from "./loadSidebar";
+import { initialProject } from "./loadProject";
 
 function deployment () {
     initialSidebar();
+    initialProject();
 }
 
 console.log("index js");
