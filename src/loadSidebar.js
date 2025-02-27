@@ -1,8 +1,11 @@
+import { addButton } from "./addButton";
+
 function initialSidebar () {
     // Declare the object that will store the img
     let imgArray = {};
     let pArray = {};
     // Create all the elements
+    const theAddDialog = document.createElement("dialog");
     const theSidebar = document.querySelector("#theSidebar");
     const theSidebarContainer = document.createElement("div");
     const theFriendTag = document.createElement("div");
@@ -20,6 +23,7 @@ function initialSidebar () {
     const theAddMoreTagText = document.createElement("p");
     const theProfilePictureText = document.createElement("p");
     // Add a class to all the elements
+    // theAddDialog.classList.add("addDialog");
     theSidebarContainer.classList.add("sidebarContainer");
     theFriendTag.classList.add("friendTag");
     theSearchTag.classList.add("searchTag");
@@ -101,14 +105,51 @@ function initialSidebar () {
         document.querySelector(".p5").addEventListener("click", () => {
             alert("You click the upcoming");
         })
+    }
 
-        document.querySelector(".p6").addEventListener("click", () => {
-            alert("You click the add");
-        })
+    //Make the html content for the add button 
+    const addButtonLogic = () => {
+        //Create all the elements
+        const theForm = document.createElement("form");
+        const theFormText = document.createElement("p");
+        const theFormLabel = document.createElement("label");
+        const theFormSelect = document.createElement("select");
+        const theOptionDefault = document.createElement("option");
+        const theOptionOne = document.createElement("option");
+        const theOptionTwo = document.createElement("option");
+        const theOptionThree = document.createElement("option");
+        const theButtonSpace = document.createElement("div");
+        const cancelButton = document.createElement("button");
+        const confirmButton = document.createElement("button");
+        //Add text
+        theFormLabel.textContent = "Favorite animal:";
+        theOptionDefault.textContent = "Choose...";
+        theOptionOne.textContent = "Brine shrimp";
+        theOptionTwo.textContent = "Red panda";
+        theOptionThree.textContent = "Spider monkey";
+        cancelButton.textContent = "Cancel";
+        confirmButton.textContent = "Confirm";
+        //Append the elements
+        theFormSelect.append(theOptionDefault,theOptionOne,theOptionTwo,theOptionThree);
+        theFormLabel.appendChild(theFormSelect);
+        theFormText.appendChild(theFormLabel);
+        theButtonSpace.append(cancelButton,confirmButton);
+        theForm.append(theFormText,theButtonSpace);
+        theAddDialog.appendChild(theForm);
+        document.querySelector(".p6").appendChild(theAddDialog);
+        //Add id, classes and properties
+        theAddDialog.classList.add("favDialog");
+        theOptionDefault.setAttribute("value","default");
+        cancelButton.setAttribute("value","cancel");
+        cancelButton.setAttribute("formmethod","dialog");
+        confirmButton.classList.add("confirm");
+        confirmButton.setAttribute("value","default");
+
     }
 
     clickEvents();
-
+    addButtonLogic();
+    addButton();
 }
 // `
 export {initialSidebar};

@@ -5,10 +5,12 @@ import { initialFooter } from "./initialfooter";
 import { initialHeader } from "./intialheader";
 
 function deployment () {
-    initialSidebar();
     initialProject();
+    initialSidebar();
     initialFooter();
     initialHeader();
+
+
 }
 
 console.log("index js");
@@ -18,5 +20,8 @@ deployment();
 //THE PLAN
 //COMPLETE: First I put in order the header, sidebar, projectSpace, footer
 //COMPLETE: Make a js for the initial load of the sidebar and projectSpace
-//CURRENT: Make a js for the constant content of the header and the footer
-//NEXT: Create the next plan for making a button that triggers a dialog which allows the submit of a new project
+//COMPLETE: Make a js for the constant content of the header and the footer
+//COMPLETE: Create the next plan for making a button that triggers a dialog which allows the submit of a new project
+//CURRENT: Make another js with a the method for the button add
+//NEXT: Create a dialog that only asks for the title
+//NEXT: Create the logic that creates a block with the information of the dialog
