@@ -22,6 +22,7 @@ deployment();
 //COMPLETE: Make a js for the initial load of the sidebar and projectSpace
 //COMPLETE: Make a js for the constant content of the header and the footer
 //COMPLETE: Create the next plan for making a button that triggers a dialog which allows the submit of a new project
-//CURRENT: Make another js with a the method for the button add
-//NEXT: Create a dialog that only asks for the title
+//COMPLETE: Make another js with a the method for the button add
+//COMPLETE: Create a dialog that only asks for the title
 //NEXT: Create the logic that creates a block with the information of the dialog
+//NEXT: Add style to the form

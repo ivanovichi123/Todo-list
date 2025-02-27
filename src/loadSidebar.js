@@ -113,33 +113,27 @@ function initialSidebar () {
         const theForm = document.createElement("form");
         const theFormText = document.createElement("p");
         const theFormLabel = document.createElement("label");
-        const theFormSelect = document.createElement("select");
-        const theOptionDefault = document.createElement("option");
-        const theOptionOne = document.createElement("option");
-        const theOptionTwo = document.createElement("option");
-        const theOptionThree = document.createElement("option");
+        const theTitleInput = document.createElement("input");
+        const theLabelBr = document.createElement("br");
         const theButtonSpace = document.createElement("div");
         const cancelButton = document.createElement("button");
         const confirmButton = document.createElement("button");
         //Add text
-        theFormLabel.textContent = "Favorite animal:";
-        theOptionDefault.textContent = "Choose...";
-        theOptionOne.textContent = "Brine shrimp";
-        theOptionTwo.textContent = "Red panda";
-        theOptionThree.textContent = "Spider monkey";
+        theFormLabel.textContent = "Write a title: ";
         cancelButton.textContent = "Cancel";
         confirmButton.textContent = "Confirm";
         //Append the elements
-        theFormSelect.append(theOptionDefault,theOptionOne,theOptionTwo,theOptionThree);
-        theFormLabel.appendChild(theFormSelect);
+        theFormLabel.append(theLabelBr,theTitleInput);
         theFormText.appendChild(theFormLabel);
         theButtonSpace.append(cancelButton,confirmButton);
         theForm.append(theFormText,theButtonSpace);
         theAddDialog.appendChild(theForm);
         document.querySelector(".p6").appendChild(theAddDialog);
         //Add id, classes and properties
+        theTitleInput.setAttribute("placeholder", "Ivan");
+        theTitleInput.setAttribute("value", "Ivan")
+        theTitleInput.setAttribute("type","text");
         theAddDialog.classList.add("favDialog");
-        theOptionDefault.setAttribute("value","default");
         cancelButton.setAttribute("value","cancel");
         cancelButton.setAttribute("formmethod","dialog");
         confirmButton.classList.add("confirm");
