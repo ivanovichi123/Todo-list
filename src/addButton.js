@@ -13,11 +13,9 @@ function addButton () {
 
     favDialog.addEventListener("close", (e) => {
         if (favDialog.returnValue === "default") {
-            // outputBox.value = "No return value";
             projectBlocks(favDialog.returnValue,counter);
             counter += 1;
         } else {
-            // outputBox.textContent = `ReturnValue: ${favDialog.returnValue}`;
             projectBlocks(favDialog.returnValue,counter);
             counter += 1;
         }
@@ -27,6 +25,10 @@ function addButton () {
     confirmBtn.addEventListener("click", (event) => {
         event.preventDefault();
         event.stopPropagation();
+        if (selectEl.value === "") {
+            alert("The title need to have at least 1 word");
+            return
+        }
         favDialog.close(selectEl.value);
     });
 }

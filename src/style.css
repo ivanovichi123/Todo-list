@@ -231,6 +231,46 @@ label {
   background-color: white;
 }
 
+/* Form */
+
+dialog {
+  align-self: center;
+  justify-self: center;
+  padding: 2rem;
+}
+
+::backdrop {
+  background-color: lightgray;
+  opacity: 0.75;
+ }
+
+ dialog > form > p{
+  padding-bottom: 5%;
+ }
+
+ .confirm {
+  margin-left: 1rem;
+ }
+
+ input:focus {
+  outline-color: rgb(61, 184, 201); 
+  box-shadow: 3px 3px 10px grey;
+}
+
+.confirm {
+  border: 2px solid green;
+  border-radius: 8px;
+  background-color: greenyellow;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.cancel {
+  border: 2px solid red;
+  border-radius: 8px;
+  background-color: rgb(230, 127, 127);
+  font-family: 'Times New Roman', Times, serif;
+}
+
 
 
 

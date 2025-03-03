@@ -25,4 +25,4 @@ deployment();
 //COMPLETE: Make another js with a the method for the button add
 //COMPLETE: Create a dialog that only asks for the title
 //COMPLETE: Create the logic that creates a block with the information of the dialog
-//CURRENT: Add style to the form
+//COMPLETE: Add style to the form

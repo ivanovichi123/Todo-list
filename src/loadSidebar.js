@@ -136,6 +136,7 @@ function initialSidebar () {
         theAddDialog.classList.add("favDialog");
         cancelButton.setAttribute("value","cancel");
         cancelButton.setAttribute("formmethod","dialog");
+        cancelButton.classList.add("cancel");
         confirmButton.classList.add("confirm");
         confirmButton.setAttribute("value","default");
 
