@@ -26,3 +26,7 @@ deployment();
 //COMPLETE: Create a dialog that only asks for the title
 //COMPLETE: Create the logic that creates a block with the information of the dialog
 //COMPLETE: Add style to the form
+//CURRENT: Make the form to pass the cancel as no information
+//COMPLETE: Make esc do the same as cancel
+//COMPLETE: Make enter not trigger cancel button
+//NEXT: Add the description, dueDate, priority, and notes to the page

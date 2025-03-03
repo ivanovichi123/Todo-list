@@ -15,6 +15,8 @@ function addButton () {
         if (favDialog.returnValue === "default") {
             projectBlocks(favDialog.returnValue,counter);
             counter += 1;
+        } else if (favDialog.returnValue === "cancel" || favDialog.returnValue === "") {
+            return
         } else {
             projectBlocks(favDialog.returnValue,counter);
             counter += 1;
@@ -31,6 +33,14 @@ function addButton () {
         }
         favDialog.close(selectEl.value);
     });
+
+    favDialog.addEventListener("keypress",function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            confirmBtn.click();
+        }
+    })
+
 }
 
 

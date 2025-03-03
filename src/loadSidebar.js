@@ -138,6 +138,7 @@ function initialSidebar () {
         cancelButton.setAttribute("formmethod","dialog");
         cancelButton.classList.add("cancel");
         confirmButton.classList.add("confirm");
+        confirmButton.setAttribute("autofocus","");
         confirmButton.setAttribute("value","default");
 
     }
