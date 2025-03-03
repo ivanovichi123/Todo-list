@@ -24,5 +24,5 @@ deployment();
 //COMPLETE: Create the next plan for making a button that triggers a dialog which allows the submit of a new project
 //COMPLETE: Make another js with a the method for the button add
 //COMPLETE: Create a dialog that only asks for the title
-//NEXT: Create the logic that creates a block with the information of the dialog
-//NEXT: Add style to the form
+//COMPLETE: Create the logic that creates a block with the information of the dialog
+//CURRENT: Add style to the form
