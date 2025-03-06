@@ -29,4 +29,5 @@ deployment();
 //CURRENT: Make the form to pass the cancel as no information
 //COMPLETE: Make esc do the same as cancel
 //COMPLETE: Make enter not trigger cancel button
-//NEXT: Add the description, dueDate, priority, and notes to the page
+//CURRENT: Add the description, dueDate, priority, and notes to the form
+//NEXT: Add style to the project blocks

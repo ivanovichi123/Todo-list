@@ -118,21 +118,55 @@ function initialSidebar () {
         const theButtonSpace = document.createElement("div");
         const cancelButton = document.createElement("button");
         const confirmButton = document.createElement("button");
+        //Create the description elements
+        const theDescriptionText = document.createElement("p");
+        const theDescriptionLabel = document.createElement("label");
+        const theDescriptionInput = document.createElement("textarea");
+        const theDescriptionLabelBr = document.createElement("br");
+        //Create the dueDate elements
+        const theDueDateText = document.createElement("p");
+        const theDueDateLabel = document.createElement("label");
+        const theDueDateInput = document.createElement("input");
+        const theDueDateBr = document.createElement("br");
+        //Create the note elements
+        const theNotesText = document.createElement("p");
+        const theNotesLabel = document.createElement("label");
+        const theNotesInput = document.createElement("input");
+        const theNotesBr = document.createElement("br");
         //Add text
         theFormLabel.textContent = "Write a title: ";
+        theDescriptionLabel.textContent = "Add a description: ";
+        theDueDateLabel.textContent = "Add a due date: ";
+        theNotesLabel.textContent = "Add some notes: ";
         cancelButton.textContent = "Cancel";
         confirmButton.textContent = "Confirm";
         //Append the elements
         theFormLabel.append(theLabelBr,theTitleInput);
+        theDescriptionLabel.append(theDescriptionLabelBr,theDescriptionInput);
+        theDueDateLabel.append(theDueDateBr,theDueDateInput);
+        theNotesLabel.append(theNotesBr,theNotesInput);
         theFormText.appendChild(theFormLabel);
+        theDescriptionText.appendChild(theDescriptionLabel);
+        theDueDateText.appendChild(theDueDateLabel);
+        theNotesText.appendChild(theNotesLabel);
         theButtonSpace.append(cancelButton,confirmButton);
-        theForm.append(theFormText,theButtonSpace);
+        theForm.append(theFormText,theDescriptionText,theDueDateText,theNotesText,theButtonSpace);
         theAddDialog.appendChild(theForm);
         document.querySelector(".p6").appendChild(theAddDialog);
         //Add id, classes and properties
-        theTitleInput.setAttribute("placeholder", "Ivan");
-        theTitleInput.setAttribute("value", "Ivan")
+        theTitleInput.setAttribute("placeholder", "My first project");
+        theTitleInput.setAttribute("value", "Ivan");
         theTitleInput.setAttribute("type","text");
+        theDescriptionInput.setAttribute("placeholder","Hi I am the description (You only have 200 characters)");
+        theDescriptionInput.setAttribute("rows","3");
+        theDescriptionInput.setAttribute("maxlength","200")
+        theDescriptionInput.classList.add("description");
+        theDueDateInput.setAttribute("type","input");
+        theDueDateInput.classList.add("dueDate");
+        theDueDateInput.setAttribute("value", "03/05/24");
+        theNotesInput.setAttribute("type","input");
+        theNotesInput.classList.add("notes");
+        theNotesInput.setAttribute("value", "Hi I am a note");
         theAddDialog.classList.add("favDialog");
         cancelButton.setAttribute("value","cancel");
         cancelButton.setAttribute("formmethod","dialog");
@@ -140,7 +174,6 @@ function initialSidebar () {
         confirmButton.classList.add("confirm");
         confirmButton.setAttribute("autofocus","");
         confirmButton.setAttribute("value","default");
-
     }
 
     clickEvents();

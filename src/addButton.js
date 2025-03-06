@@ -5,6 +5,9 @@ function addButton () {
     const showButton = document.querySelector(".p6");
     const favDialog = document.querySelector(".favDialog");
     const selectEl = favDialog.querySelector("input");
+    const theDescription = favDialog.querySelector(".description");
+    const theDueDate = favDialog.querySelector(".dueDate");
+    const theNotes = favDialog.querySelector(".notes");
     const confirmBtn = favDialog.querySelector(".confirm");
 
     showButton.addEventListener("click", () => {
@@ -12,13 +15,21 @@ function addButton () {
     })
 
     favDialog.addEventListener("close", (e) => {
-        if (favDialog.returnValue === "default") {
-            projectBlocks(favDialog.returnValue,counter);
-            counter += 1;
-        } else if (favDialog.returnValue === "cancel" || favDialog.returnValue === "") {
+        let titleInfo = selectEl.value;
+        let descriptionInfo = theDescription.value;
+        let dueDateInfo = theDueDate.value;
+        let notesInfo = theNotes.value;
+        console.log(titleInfo);
+        console.log(descriptionInfo);
+        console.log(dueDateInfo);
+        console.log(notesInfo);
+        console.log(favDialog.returnValue);
+        if (favDialog.returnValue === "" || favDialog.returnValue === "cancel" ) {
+            alert("I enter 1");
             return
         } else {
-            projectBlocks(favDialog.returnValue,counter);
+            alert("I enter 2");
+            projectBlocks(titleInfo,descriptionInfo,dueDateInfo,notesInfo,counter);
             counter += 1;
         }
     });
@@ -31,15 +42,22 @@ function addButton () {
             alert("The title need to have at least 1 word");
             return
         }
-        favDialog.close(selectEl.value);
+        favDialog.close("a");
     });
 
     favDialog.addEventListener("keypress",function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
             confirmBtn.click();
+        }  
+    });
+
+    favDialog.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            event.preventDefault();
+            favDialog.close("cancel");
         }
-    })
+    });
 
 }
 
