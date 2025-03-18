@@ -1,4 +1,5 @@
 import { projectBlocks } from "./projectBlocks";
+import { updateSelector } from "./updateSelector";
 
 function addButton () {
     let counter = 0
@@ -7,8 +8,14 @@ function addButton () {
     const selectEl = favDialog.querySelector("input");
     const theDescription = favDialog.querySelector(".description");
     const theDueDate = favDialog.querySelector(".dueDate");
+    const thePriority = favDialog.querySelector(".priority");
     const theNotes = favDialog.querySelector(".notes");
+    const theList = favDialog.querySelector(".list");
+    const theListSelector = favDialog.querySelector("#none");
     const confirmBtn = favDialog.querySelector(".confirm");
+    let projectListArray = [];
+
+
 
     showButton.addEventListener("click", () => {
         favDialog.showModal();
@@ -19,18 +26,20 @@ function addButton () {
         let descriptionInfo = theDescription.value;
         let dueDateInfo = theDueDate.value;
         let notesInfo = theNotes.value;
-        console.log(titleInfo);
-        console.log(descriptionInfo);
-        console.log(dueDateInfo);
-        console.log(notesInfo);
-        console.log(favDialog.returnValue);
+        let priorityInfo = thePriority.value;
+        let listInfo = theList.value;
+        let listSelectorInfo = theListSelector.value;
         if (favDialog.returnValue === "" || favDialog.returnValue === "cancel" ) {
             alert("I enter 1");
             return
         } else {
             alert("I enter 2");
-            projectBlocks(titleInfo,descriptionInfo,dueDateInfo,notesInfo,counter);
+            projectBlocks(titleInfo,descriptionInfo,dueDateInfo,notesInfo,priorityInfo,listInfo,listSelectorInfo,projectListArray,counter);
             counter += 1;
+            if (listInfo !== "") {
+                projectListArray.push(listInfo);
+            }
+            updateSelector(projectListArray);
         }
     });
 
@@ -41,6 +50,15 @@ function addButton () {
         if (selectEl.value === "") {
             alert("The title need to have at least 1 word");
             return
+        } 
+        for (let i = 0;i < projectListArray.length; i++) {
+            if (theList.value === projectListArray[i]) {
+                alert("You already have a project list with the same name");
+                return
+            }
+        }
+        if(Number(thePriority.value) < 1 || Number(thePriority.value) > 3) {
+            alert("The priority must be between 1,2 or 3");
         }
         favDialog.close("a");
     });
@@ -59,10 +77,12 @@ function addButton () {
         }
     });
 
+    const theExample = () => {
+        console.log("hey");
+    }
+
+    return{theExample}
+
 }
-
-
-
-
 
 export {addButton};

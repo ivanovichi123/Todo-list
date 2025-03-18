@@ -5,6 +5,7 @@ function initialSidebar () {
     let imgArray = {};
     let pArray = {};
     // Create all the elements
+    const today = new Date().toISOString().split('T')[0];
     const theAddDialog = document.createElement("dialog");
     const theSidebar = document.querySelector("#theSidebar");
     const theSidebarContainer = document.createElement("div");
@@ -23,7 +24,6 @@ function initialSidebar () {
     const theAddMoreTagText = document.createElement("p");
     const theProfilePictureText = document.createElement("p");
     // Add a class to all the elements
-    // theAddDialog.classList.add("addDialog");
     theSidebarContainer.classList.add("sidebarContainer");
     theFriendTag.classList.add("friendTag");
     theSearchTag.classList.add("searchTag");
@@ -131,43 +131,86 @@ function initialSidebar () {
         //Create the note elements
         const theNotesText = document.createElement("p");
         const theNotesLabel = document.createElement("label");
-        const theNotesInput = document.createElement("input");
+        const theNotesInput = document.createElement("textarea");
         const theNotesBr = document.createElement("br");
+        //Create the priority elements 
+        const thePrioryText = document.createElement("p");
+        const thePriorityLabel = document.createElement("label");
+        const thePriorityInput = document.createElement("input");
+        // Create the project list elements
+        const theListText = document.createElement("p");
+        const theListLabel = document.createElement("label");
+        const theListInput = document.createElement("input");
+        //Create the project list selector
+        const theListSelectorText = document.createElement("p");
+        const theListSelectorTitle = document.createElement("p");
+        const theListSelectorLabel = document.createElement("label");
+        const theListSelectorInput = document.createElement("input");
         //Add text
-        theFormLabel.textContent = "Write a title: ";
+        theFormLabel.textContent = "Write a title*: ";
         theDescriptionLabel.textContent = "Add a description: ";
-        theDueDateLabel.textContent = "Add a due date: ";
+        theDueDateLabel.textContent = "Add a due date*: ";
         theNotesLabel.textContent = "Add some notes: ";
+        thePrioryText.textContent = "Add the priority(1 is top priority)*: ";
+        theListText.textContent = "Add a project list: ";
+        theListSelectorTitle.textContent = "Choose a project list*: ";
+        theListSelectorLabel.textContent = "None";
         cancelButton.textContent = "Cancel";
         confirmButton.textContent = "Confirm";
         //Append the elements
         theFormLabel.append(theLabelBr,theTitleInput);
         theDescriptionLabel.append(theDescriptionLabelBr,theDescriptionInput);
         theDueDateLabel.append(theDueDateBr,theDueDateInput);
+        thePriorityLabel.append(thePriorityInput);
+        theListLabel.append(theListInput);
         theNotesLabel.append(theNotesBr,theNotesInput);
         theFormText.appendChild(theFormLabel);
         theDescriptionText.appendChild(theDescriptionLabel);
         theDueDateText.appendChild(theDueDateLabel);
+        thePrioryText.appendChild(thePriorityLabel);
         theNotesText.appendChild(theNotesLabel);
+        theListText.appendChild(theListLabel);
+        theListSelectorText.append(theListSelectorTitle,theListSelectorInput,theListSelectorLabel);
         theButtonSpace.append(cancelButton,confirmButton);
-        theForm.append(theFormText,theDescriptionText,theDueDateText,theNotesText,theButtonSpace);
+        theForm.append(theFormText,theDescriptionText,theDueDateText,theNotesText,thePrioryText,theListText,theListSelectorText,theButtonSpace);
         theAddDialog.appendChild(theForm);
         document.querySelector(".p6").appendChild(theAddDialog);
         //Add id, classes and properties
         theTitleInput.setAttribute("placeholder", "My first project");
         theTitleInput.setAttribute("value", "Ivan");
         theTitleInput.setAttribute("type","text");
-        theDescriptionInput.setAttribute("placeholder","Hi I am the description (You only have 200 characters)");
+        theDescriptionInput.setAttribute("placeholder","Hi I am the description (You only have 100 characters)");
         theDescriptionInput.setAttribute("rows","3");
-        theDescriptionInput.setAttribute("maxlength","200")
+        theDescriptionInput.setAttribute("maxlength","100")
         theDescriptionInput.classList.add("description");
-        theDueDateInput.setAttribute("type","input");
+        theDueDateInput.setAttribute("type","date");
         theDueDateInput.classList.add("dueDate");
-        theDueDateInput.setAttribute("value", "03/05/24");
-        theNotesInput.setAttribute("type","input");
+        theDueDateInput.setAttribute("value", today);
+        theDueDateInput.setAttribute("min", today);
+        theDueDateInput.setAttribute("max", "2050-12-30");
         theNotesInput.classList.add("notes");
-        theNotesInput.setAttribute("value", "Hi I am a note");
+        theNotesInput.setAttribute("placeholder","Hi I am the description (You only have 300 characters)");
+        theNotesInput.setAttribute("rows","3");
+        theNotesInput.setAttribute("maxlength","300");
+        thePriorityInput.classList.add("priority");
+        thePriorityInput.setAttribute("placeholder", "1");
+        thePriorityInput.setAttribute("value", "1");
+        thePriorityInput.setAttribute("type","number");
+        thePriorityInput.setAttribute("min","1");
+        thePriorityInput.setAttribute("max","3");
+        theListInput.classList.add("list");
+        theListInput.setAttribute("placeholder", "School");
+        theListInput.setAttribute("value", "School");
+        theListInput.setAttribute("type","text");
         theAddDialog.classList.add("favDialog");
+        //The selector attributes and classes
+        theListSelectorTitle.classList.add("checklistB");
+        theListSelectorInput.setAttribute("type","radio");
+        theListSelectorInput.setAttribute("id","none");
+        theListSelectorInput.setAttribute("value",false);
+        theListSelectorLabel.setAttribute("for","none");
+        theListSelectorLabel.classList.add("nones");
+        theListSelectorText.classList.add("checklist");
         cancelButton.setAttribute("value","cancel");
         cancelButton.setAttribute("formmethod","dialog");
         cancelButton.classList.add("cancel");

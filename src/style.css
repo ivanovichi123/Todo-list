@@ -220,16 +220,33 @@ label {
 
 /*Project blocks */
 
-.projectContainer {
+.projectList {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin: 1rem;
 }
 
-.projectContainer > div {
-  background-color: white;
+.projectList > div > p > div{
+  background-color: lightblue;
+  margin: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  font-size: calc(2rem - 10px);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: solid 2px black;
 }
+
+.projectList > div > p {
+  text-align: center;
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 8px;
+  border: solid 2px black;
+  margin: 1rem;
+}
+
+
 
 /* Form */
 
@@ -275,8 +292,13 @@ textarea {
   width: auto;
 }
 
+.checklist > input  {
+  display: inline-block;
+  width: 50px;
+}
 
-
-
+.checklist > label {
+  display: inline-block;
+}
 
 
