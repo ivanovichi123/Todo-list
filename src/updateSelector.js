@@ -16,7 +16,9 @@ function updateSelector (theList) {
         let theNoneValueInput = document.createElement("input");
         theNoneValueInput.setAttribute("type","radio");
         theNoneValueInput.setAttribute("id","none");
-        theNoneValueInput.setAttribute("value",false);
+        theNoneValueInput.setAttribute("value","none");
+        theNoneValueInput.setAttribute("checked","");
+        theNoneValueInput.setAttribute("name","checklists");
         //Create the none checklist label
         let theNoneValueLabel = document.createElement("label");
         theNoneValueLabel.setAttribute("for","none");
@@ -25,18 +27,23 @@ function updateSelector (theList) {
         //Add it to the checklist
         theChecklist.append(theTitle,theNoneValueInput,theNoneValueLabel);
         for (let i = 0; i < theRealList.length;i++) {
+            //Create the br
+            let theBr = document.createElement("br");
             //Creation of the input
             let temporalInput = document.createElement("input");
             temporalInput.setAttribute("type","radio");
             temporalInput.setAttribute("id",`${theRealList[i]}`);
             temporalInput.setAttribute("value", `${theRealList[i]}`);
+            temporalInput.setAttribute("name","checklists");
             //Creation of the label
             let temporalLabel = document.createElement("label");
             temporalLabel.setAttribute("for",`${theRealList[i]}`);
-            temporalLabel.classList.add(`${theRealList[i]}s`);
+            //Replace spaces with "-"
+            let fixTheRealList = theRealList[i].replaceAll(" ","-");
+            temporalLabel.classList.add(`${fixTheRealList}s`);
             temporalLabel.textContent = `${theRealList[i]}`;
             //Append to the checklist
-            theChecklist.append(temporalInput,temporalLabel);
+            theChecklist.append(theBr,temporalInput,temporalLabel);
         }
         console.log(theRealList);
     }

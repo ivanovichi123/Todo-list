@@ -223,7 +223,7 @@ label {
 .projectList {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   margin: 1rem;
 }
 
@@ -299,6 +299,18 @@ textarea {
 
 .checklist > label {
   display: inline-block;
+}
+
+form {
+  cursor: default;
+}
+
+.confirm {
+  cursor: pointer;
+}
+
+.cancel {
+  cursor: pointer;
 }
 
 

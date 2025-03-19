@@ -25,25 +25,29 @@ function projectBlocks (title,description,dueDate,notes,priority,list,selector,p
         priorityContainer.classList.add(`pP${number}`);
         SelectorContainer.classList.add(`pS${number}`);
         //Add the block to its respective project list
-        console.log(temporalList);
         if (temporalList === "") {
             for (let i = 0; i < projectArray.length; i++) {
                 if (temporalSelector === projectArray[i]) {
                     console.log("I enter the if");
                     let temporalListBlock = document.createElement("div");
                     temporalListBlock.append(titleContainer,descriptionContainer,dueDateContainer,notesContainer,priorityContainer,SelectorContainer);
-                    document.querySelector(`.${temporalSelector}P`).append(temporalListBlock);
+                    let fixTemporalSelector = temporalSelector.replaceAll(" ","-"); 
+                    console.log(fixTemporalSelector);
+                    console.log(temporalListBlock);
+                    document.querySelector(`.${fixTemporalSelector}P`).append(temporalListBlock);
                     return
                 }
             }
         }
         console.log(projectArray);
+        //Add this "-" when encounter spaces
+        let fixTemporalList = temporalList.replaceAll(" ", "-");
         let listBlock = document.createElement("div");
         listBlock.append(titleContainer,descriptionContainer,dueDateContainer,notesContainer,priorityContainer,SelectorContainer);
         let listDiv = document.createElement("div");
-        listDiv.classList.add(`${temporalList}`);
+        listDiv.classList.add(`${fixTemporalList}`);
         let listTitle = document.createElement("p");
-        listTitle.classList.add(`${temporalList}P`);
+        listTitle.classList.add(`${fixTemporalList}P`);
         listTitle.textContent = temporalList;
         listTitle.appendChild(listBlock);
         listDiv.appendChild(listTitle);

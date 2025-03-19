@@ -38,11 +38,14 @@ deployment();
 //COMPLETE: Make the same project list names to stack together
 //COMPLETE: Change the project list form to a checklist
 //COMPLETE: Make the checklist to update base on the projects created
-//NEXT: Resolve the bugs
-//NEXT: check the hovering
-//NEXT: if the add project list is alone, by default create a list 
+//COMPLETE: Resolve the bugs
+//COMPLETE: check the hovering
+//COMPLETE: Create a default list
+//COMPLETE: With this the step 3 should be complete and ready to go
+//NEXT: Change the add text for the things that will not work
+//NEXT: Change the color base on the priority
+//NEXT: Make only visually the title and due date
+//NEXT: Make possible the expansion of a todo to see the rest of the things
+//NEXT:Delete a todo
+//NEXT: With this the step 4 is complete
 
-//NEXT: With this the step 3 should be complete and ready to go
-
-
-//ADD BR TO THE THINGS

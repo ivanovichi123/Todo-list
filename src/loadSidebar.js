@@ -207,7 +207,9 @@ function initialSidebar () {
         theListSelectorTitle.classList.add("checklistB");
         theListSelectorInput.setAttribute("type","radio");
         theListSelectorInput.setAttribute("id","none");
-        theListSelectorInput.setAttribute("value",false);
+        theListSelectorInput.setAttribute("value","none");
+        theListSelectorInput.setAttribute("name","checklists");
+        theListSelectorInput.setAttribute("checked","");
         theListSelectorLabel.setAttribute("for","none");
         theListSelectorLabel.classList.add("nones");
         theListSelectorText.classList.add("checklist");
