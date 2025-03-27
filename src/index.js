@@ -42,10 +42,14 @@ deployment();
 //COMPLETE: check the hovering
 //COMPLETE: Create a default list
 //COMPLETE: With this the step 3 should be complete and ready to go
-//NEXT: Change the add text for the things that will not work
-//NEXT: Change the color base on the priority
-//NEXT: Make only visually the title and due date
-//NEXT: Make possible the expansion of a todo to see the rest of the things
-//NEXT:Delete a todo
+//COMPLETE: Change the add text for the things that will not work
+//COMPLETE: Change the color base on the priority
+//CURRENT: Make only visually the title and due date
+    //COMPLETE: In projectBlocks put all the other information in a dialog
+    //COMPLETE: Add a button that shows the dialog with the extra information in another module
+//COMPLETE: Make possible the expansion of a todo to see the rest of the things
+//CURRENT:Delete a todo
+    //COMPLETE: Make a button
+    //COMPLETE: Make the logic to erase them, if possible create a new module
 //NEXT: With this the step 4 is complete
 

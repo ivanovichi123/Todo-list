@@ -87,15 +87,15 @@ function initialSidebar () {
         })
 
         document.querySelector(".p1").addEventListener("click", () => {
-            alert("You click the search");
+            alert("You click the search, which does not work");
         })
 
         document.querySelector(".p2").addEventListener("click", () => {
-            alert("You click the inbox");
+            alert("You do not have any messages");
         })
 
         document.querySelector(".p3").addEventListener("click", () => {
-            alert("You click the friend");
+            alert("You do not have friends");
         })
 
         document.querySelector(".p4").addEventListener("click", () => {

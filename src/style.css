@@ -246,6 +246,36 @@ label {
   margin: 1rem;
 }
 
+[class^="dB"]  {
+  background-color: lightblue;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-self: center;
+  background-image: url("./images/plus.svg");
+}
+
+.projectList > div > p > div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.projectList > div > p > div > p {
+  grid-column: 1/3;
+}
+
+[class^="dDB"] {
+  background-color: lightblue;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-self: center;
+  background-image: url("./images/delete.svg");
+}
+
 
 
 /* Form */
