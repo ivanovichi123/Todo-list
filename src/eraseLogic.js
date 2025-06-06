@@ -1,3 +1,4 @@
+import { storageEraser } from "./eraseStorage";
 import { updateSelector } from "./updateSelector";
 
 function theListEraser (theNumber,theList) {
@@ -7,6 +8,11 @@ function theListEraser (theNumber,theList) {
     let theClassParentParent = theClassParent.parentElement
     //Remove the class
     theClass.remove();
+
+
+
+
+
 
     //Logic to erase the list selector
     const makingTheList = () => {
@@ -18,13 +24,19 @@ function theListEraser (theNumber,theList) {
             }
         }
         updateSelector(theList);
+        //Update the storage
+        alert("I call the 28 eraser");
+        storageEraser(theNumber,theList);
+        return
     }
 
     if (theClassParent.childElementCount === 0) {
         theClassParentParent.remove();
         makingTheList();
+    } else {
+        alert("I call the 38 eraser");
+        storageEraser(theNumber,false);
     }
-
 
 }
 

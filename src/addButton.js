@@ -1,5 +1,6 @@
 import { projectBlocks } from "./projectBlocks";
-import { updateSelector } from "./updateSelector";
+
+import { storageReceiver } from "./storageLogic";
 
 function addButton () {
     let counter = 0
@@ -33,12 +34,13 @@ function addButton () {
             return
         } else {
             alert("I enter 2");
-            projectBlocks(titleInfo,descriptionInfo,dueDateInfo,notesInfo,priorityInfo,listInfo,listSelectorInfo,projectListArray,counter);
-            counter += 1;
+            // projectBlocks(titleInfo,descriptionInfo,dueDateInfo,notesInfo,priorityInfo,listInfo,listSelectorInfo,projectListArray,counter);
             if (listInfo !== "") {
                 projectListArray.push(listInfo);
             }
-            updateSelector(projectListArray);
+            storageReceiver(titleInfo, descriptionInfo, dueDateInfo, notesInfo, priorityInfo, listInfo, listSelectorInfo, projectListArray, counter);
+            counter += 1;
+            // updateSelector(projectListArray);
             console.log(projectListArray);
         }
     });
@@ -56,7 +58,8 @@ function addButton () {
             return
         }
         for (let i = 0;i < projectListArray.length; i++) {
-            if (theList.value === projectListArray[i]) {
+            if (theList.value === localStorage.getItem("ProjectArray").split(",")[i]) {
+                console.log(localStorage.getItem("ProjectArray").split(",")[i]);
                 alert("You already have a project list with the same name");
                 return
             }
@@ -87,11 +90,13 @@ function addButton () {
     });
 
     const defaultList = () => {
-        projectBlocks("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter);
-        counter += 1;
+        // projectBlocks("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter);
         projectListArray.push("Example list");
-        updateSelector(projectListArray);
+        storageReceiver("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter,"firstLoad");
+        counter += 1;
+        // updateSelector(projectListArray);
         console.log(projectListArray);
+        
     }
 
     defaultList();

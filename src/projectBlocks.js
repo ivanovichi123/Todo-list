@@ -1,4 +1,5 @@
 import { theListEraser } from "./eraseLogic";
+import { storageReceiver } from "./storageLogic";
 
 function projectBlocks (title,description,dueDate,notes,priority,list,selector,projectArray,number) {
     let temporalTitle = title;
@@ -33,8 +34,12 @@ function projectBlocks (title,description,dueDate,notes,priority,list,selector,p
         temporalDialogClose.classList.add(`dDC${number}`);
         eraseList.classList.add(`dDB${number}`);
         //Add the block to its respective project list
-        if (temporalList === "") {
+        console.log("WHAT " + temporalList);
+        console.log(temporalList === "");
+        if (temporalList === "") { //The if is when the list has something and it append to an existing block
+            alert("I enter the if");
             for (let i = 0; i < projectArray.length; i++) {
+                alert("I enter the for")
                 if (temporalSelector === projectArray[i]) {
                     console.log("I enter the if");
                     let temporalListBlock = document.createElement("div");
@@ -117,6 +122,7 @@ function projectBlocks (title,description,dueDate,notes,priority,list,selector,p
     colorChanger();
     showDialog();
     eraseAList();
+    //Update the storage
 }
 
 // `
