@@ -143,7 +143,6 @@ function storageReceiver(title,description,dueDate,notes,priority,list,selector,
 
     // localStorage.clear();
     if (localStorage.length === 0) {
-      alert("I have a length of zero");
       localStorage.setItem("Title", title);
       localStorage.setItem("Description", description);
       localStorage.setItem("DueDate", dueDate);
