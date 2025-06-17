@@ -1,5 +1,4 @@
 import { theListEraser } from "./eraseLogic";
-import { storageReceiver } from "./storageLogic";
 
 function projectBlocks (title,description,dueDate,notes,priority,list,selector,projectArray,number) {
     let temporalTitle = title;
