@@ -3,7 +3,7 @@ import { projectBlocks } from "./projectBlocks";
 import { storageReceiver } from "./storageLogic";
 
 function addButton () {
-    let counter = 0
+    let counter = localStorage.getItem("Number") ? localStorage.getItem("Number").split(",").length : 0;
     const showButton = document.querySelector(".p6");
     const favDialog = document.querySelector(".favDialog");
     const selectEl = favDialog.querySelector("input");
@@ -13,7 +13,7 @@ function addButton () {
     const theNotes = favDialog.querySelector(".notes");
     const theList = favDialog.querySelector(".list");
     const confirmBtn = favDialog.querySelector(".confirm");
-    let projectListArray = [];
+    let projectListArray = localStorage.getItem("ProjectArray") ? localStorage.getItem("ProjectArray").split(",") : [];
 
 
 
@@ -58,10 +58,9 @@ function addButton () {
             return
         }
         for (let i = 0;i < projectListArray.length; i++) {
-            if (theList.value === localStorage.getItem("ProjectArray").split(",")[i]) {
-                console.log(localStorage.getItem("ProjectArray").split(",")[i]);
+            if(projectListArray.includes(theList.value)) {
                 alert("You already have a project list with the same name");
-                return
+                return;
             }
         }
         if(document.querySelector('input[name = checklists]:checked').value === "none" && theList.value === "") {
@@ -75,11 +74,11 @@ function addButton () {
         favDialog.close("a");
     });
 
-    favDialog.addEventListener("keypress",function (event) {
-        if (event.key === "Enter") {
+    favDialog.addEventListener("keydown", function(event){
+        if(event.key === "Enter" && event.target.tagName !== "TEXTAREA") {
             event.preventDefault();
             confirmBtn.click();
-        }  
+        }
     });
 
     favDialog.addEventListener("keydown", (event) => {
@@ -90,12 +89,13 @@ function addButton () {
     });
 
     const defaultList = () => {
-        // projectBlocks("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter);
-        projectListArray.push("Example list");
-        storageReceiver("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter,"firstLoad");
-        counter += 1;
-        // updateSelector(projectListArray);
-        console.log(projectListArray);
+        if(!projectListArray.includes("Example list")) {
+            projectListArray.push("Example list");
+            storageReceiver("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter,"firstLoad");
+            counter += 1;
+                    console.log(projectListArray);
+        }
+
         
     }
 
