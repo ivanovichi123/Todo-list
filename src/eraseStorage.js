@@ -1,6 +1,10 @@
+import { projectBlocks } from "./projectBlocks";
+import { updateSelector } from "./updateSelector";
 import { storageReceiver } from "./storageLogic";
 
 function storageEraser(Number,list) {
+ 
+
     console.log("Before local storage");
     for (let i = 0; i < localStorage.length; i++)   {
         console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
@@ -160,3 +164,8 @@ function storageEraser(Number,list) {
   }
 
 export{storageEraser};
+
+//Tiene que haber 3 casos de borrado:
+//Borrar y agregar de una misma seleccion
+//Borrar y garegar de selecciones distintas
+//Al no haber nada no hacer nada

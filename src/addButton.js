@@ -1,3 +1,5 @@
+import { projectBlocks } from "./projectBlocks";
+
 import { storageReceiver } from "./storageLogic";
 
 function addButton () {

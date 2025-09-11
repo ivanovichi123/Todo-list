@@ -71,6 +71,7 @@ function storageReceiver(title,description,dueDate,notes,priority,list,selector,
       localStorage.setItem("Selector", selectorArray);
 
       let projectArrayList = (localStorage.getItem("ProjectArray")).split(",");
+      //AQUI TE QUEDASTE if project array === "" -> localStorage.setItem("project array", newprojectArray);
       let theDeterminer = 0;
       let newProjectArray = "";
       if (list !== "") {
@@ -172,3 +173,7 @@ function storageReceiver(title,description,dueDate,notes,priority,list,selector,
   }
 
 export{storageReceiver};
+  
+// localStorage.clear();
+// title,description,dueDate,notes,priority,list,selector,projectArray,number
+// Lo que falta es hacer la logica de cuando se elimina algo

@@ -8,6 +8,12 @@ function theListEraser (theNumber,theList) {
     let theClassParentParent = theClassParent.parentElement
     //Remove the class
     theClass.remove();
+
+
+
+
+
+
     //Logic to erase the list selector
     const makingTheList = () => {
         let theSame = String(theClassParentParent.classList);
@@ -34,4 +40,5 @@ function theListEraser (theNumber,theList) {
 
 }
 
+// `
 export{theListEraser};
