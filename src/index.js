@@ -13,7 +13,7 @@ function deployment () {
 }
 
 console.log("index js");
-localStorage.clear();
+// localStorage.clear();
 deployment();
 
 

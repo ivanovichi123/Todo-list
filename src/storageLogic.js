@@ -169,6 +169,7 @@ function storageReceiver(title,description,dueDate,notes,priority,list,selector,
 
     // localStorage.clear();
     if (localStorage.length === 0) {
+      console.log("I am here because the storage is empty");
       localStorage.setItem("Title", title);
       localStorage.setItem("Description", description);
       localStorage.setItem("DueDate", dueDate);
@@ -191,13 +192,13 @@ function storageReceiver(title,description,dueDate,notes,priority,list,selector,
     }
 
     if(localStorage.length !== 0 && load === "firstLoad") {
-      alert("I enter 1");
+      console.log("I enter 1");
       storageDivider(); 
     } else if (load === "Update"){
-      alert("I enter 2");
+      console.log("I enter 2");
       storageDivider();
     } else {
-      alert("I enter 3");
+      console.log("I enter 3");
       storageSaver();
       storageDivider();
     }

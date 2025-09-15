@@ -57,8 +57,9 @@ function addButton () {
             alert("The priority must be between 1,2 or 3");
             return
         }
-        for (let i = 0;i < projectListArray.length; i++) {
-            if(projectListArray.includes(theList.value)) {
+        for (let i = 0;i < localStorage.getItem("ProjectArray").length; i++) {
+            if(localStorage.getItem("ProjectArray").split(",")[i] === theList.value) {
+
                 alert("You already have a project list with the same name");
                 return;
             }
@@ -90,11 +91,13 @@ function addButton () {
 
     const defaultList = () => {
         console.log("I am the default list", projectListArray);
-        if(!projectListArray.includes("Example list")) {
+        if(localStorage.length === 0) {
             projectListArray.push("Example list");
             storageReceiver("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter,"firstLoad");
             counter += 1;
             console.log(projectListArray);
+        } else {
+            storageReceiver("","","","","","","","","","firstLoad");
         }
 
         
