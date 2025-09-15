@@ -3,6 +3,7 @@ import { storageReceiver } from "./storageLogic";
 
 function projectBlocks (title,description,dueDate,notes,priority,list,selector,projectArray,number) {
     let temporalTitle = title;
+    console.log("the title", title);
     let temporalDescription = description;
     let temporalDueDate = dueDate;
     let temporalNotes = notes;

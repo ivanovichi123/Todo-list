@@ -3,6 +3,7 @@ import { updateSelector } from "./updateSelector";
 
 function storageReceiver(title,description,dueDate,notes,priority,list,selector,projectArray,number, load) {
     //Make the local storage for each element
+    const storageKeyItems = ["Title", "Description", "DueDate", "Notes", "Priority", "List", "Selector", "ProjectArray", "Number"];
     console.log(list);
     function storageSaver() {
 
@@ -112,23 +113,48 @@ function storageReceiver(title,description,dueDate,notes,priority,list,selector,
     function storageDivider() {
 
 
-      document.querySelector(".projectList").innerHTML = "";
+      document.querySelector(".projectList").textContent = "";
       let theSplit = [];
       for (let i = 0; i < localStorage.length; i++) {
-        const storageUnit = (localStorage.getItem(localStorage.key(i)));
-        theSplit.push(storageUnit.split(","));
+        // let storageUnit = (localStorage.getItem(localStorage.key(i)));
+        // theSplit.push(storageUnit.split(","));
+
+
+        let storageUnitDemo = localStorage.getItem(storageKeyItems[i]);
+        console.log("The storage unit demo", storageKeyItems[i] ,storageUnitDemo);
+        theSplit.push(storageUnitDemo.split(","));
+
+
       }
       console.log(theSplit);
       for(let j = 0; j < theSplit[0].length; j++) {
         let theUnitTitle = theSplit[0][j];
-        let theUnitProjectArray = theSplit[1];
-        let theUnitSelector = theSplit[2][j];
-        let theUnitDescription = theSplit[3][j];
+        console.log("title", theUnitTitle);
+
+        let theUnitDescription = theSplit[1][j];
+        console.log("description", theUnitDescription);
+
+        let theUnitDueDate = theSplit[2][j];
+        console.log("Date", theUnitDueDate);
+
+        let theUnitNotes = theSplit[3][j];
+        console.log("Notes", theUnitNotes);
+
         let theUnitPriority = theSplit[4][j];
-        let theUnitNotes = theSplit[5][j];
-        let theUnitDueDate = theSplit[6][j];
-        let theUnitList = theSplit[7][j];
+        console.log("Priority", theUnitPriority);
+
+        let theUnitList = theSplit[5][j];
+        console.log("List", theUnitList);
+
+        let theUnitSelector = theSplit[6][j];
+        console.log("selector", theUnitSelector);
+
+        let theUnitProjectArray = theSplit[7];
+        console.log("Project array", theUnitProjectArray);
+        
         let theUnitNumber = theSplit[8][j];
+        console.log("Number", theUnitNumber);
+
         if(theUnitTitle === "") {
           return
         }
@@ -153,14 +179,25 @@ function storageReceiver(title,description,dueDate,notes,priority,list,selector,
       localStorage.setItem("ProjectArray", projectArray);
       localStorage.setItem("Number", number);
       storageDivider();
+      
+      console.log("local storage");
+      for (let i = 0; i < localStorage.length; i++)   {
+      console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+      }
+
+
+
       return
     }
 
     if(localStorage.length !== 0 && load === "firstLoad") {
+      alert("I enter 1");
       storageDivider(); 
     } else if (load === "Update"){
+      alert("I enter 2");
       storageDivider();
     } else {
+      alert("I enter 3");
       storageSaver();
       storageDivider();
     }

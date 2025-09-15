@@ -89,11 +89,12 @@ function addButton () {
     });
 
     const defaultList = () => {
+        console.log("I am the default list", projectListArray);
         if(!projectListArray.includes("Example list")) {
             projectListArray.push("Example list");
             storageReceiver("Example task","I need to put more tasks to do in my todo list","2029-05-12","Do not forget to buy bread","2","Example list","none",projectListArray,counter,"firstLoad");
             counter += 1;
-                    console.log(projectListArray);
+            console.log(projectListArray);
         }
 
         
