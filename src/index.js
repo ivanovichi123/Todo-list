@@ -3,19 +3,18 @@ import { initialSidebar } from "./loadSidebar";
 import { initialProject } from "./loadProject";
 import { initialFooter } from "./initialfooter";
 import { initialHeader } from "./intialheader";
-import { storageReceiver} from "./storageLogic";
+import { storageReceiver } from "./storageLogic";
 
-function deployment () {
-    initialProject();
-    initialSidebar();
-    initialFooter();
-    initialHeader();
+function deployment() {
+  initialProject();
+  initialSidebar();
+  initialFooter();
+  initialHeader();
 }
 
 console.log("index js");
 // localStorage.clear();
 deployment();
-
 
 //THE PLAN
 //COMPLETE: First I put in order the header, sidebar, projectSpace, footer
@@ -47,21 +46,19 @@ deployment();
 //COMPLETE: Change the add text for the things that will not work
 //COMPLETE: Change the color base on the priority
 //CURRENT: Make only visually the title and due date
-    //COMPLETE: In projectBlocks put all the other information in a dialog
-    //COMPLETE: Add a button that shows the dialog with the extra information in another module
+//COMPLETE: In projectBlocks put all the other information in a dialog
+//COMPLETE: Add a button that shows the dialog with the extra information in another module
 //COMPLETE: Make possible the expansion of a todo to see the rest of the things
 //CURRENT:Delete a todo
-    //COMPLETE: Make a button
-    //COMPLETE: Make the logic to erase them, if possible create a new module
+//COMPLETE: Make a button
+//COMPLETE: Make the logic to erase them, if possible create a new module
 //COMPLETE: With this the step 4 is complete
 //CURRENT: Make the plans for the step 8
-    //COMPLETE: CHECK FOR SIMPLE INPUTS IN THE STORAGE VIA THE INDEX.JS
-    //COMPLETE: THINK IN THE MOMENT WHERE THE MODULE STORAGE IS CALL
-    //COMPLETE: MAKE ADD BUTTON GIVE THE INFORMATION TO THE STORAGE
-    //COMPLETE: MAKE THE INDEX TO LOAD THE STORAGE INFORMATION IF IT IN THERE
-    //COMPLETE: CREATE LOGIC TO THE STORAGE WITH THE ERASE LOGIC   
-    //COMPLETE: WITH THE NUMBER THE STORAGE WILL RECEIVE TRY TO CHANGE IN WHEN YOU ERASE IT, AND CREATE THEM AGAIN WITH THE NUMBERS CHANGE
-    //NEXT: Check if the erase
+//COMPLETE: CHECK FOR SIMPLE INPUTS IN THE STORAGE VIA THE INDEX.JS
+//COMPLETE: THINK IN THE MOMENT WHERE THE MODULE STORAGE IS CALL
+//COMPLETE: MAKE ADD BUTTON GIVE THE INFORMATION TO THE STORAGE
+//COMPLETE: MAKE THE INDEX TO LOAD THE STORAGE INFORMATION IF IT IN THERE
+//COMPLETE: CREATE LOGIC TO THE STORAGE WITH THE ERASE LOGIC
+//COMPLETE: WITH THE NUMBER THE STORAGE WILL RECEIVE TRY TO CHANGE IN WHEN YOU ERASE IT, AND CREATE THEM AGAIN WITH THE NUMBERS CHANGE
+//NEXT: Check if the erase
 //INNER HTML DO NOT US IT
-
-

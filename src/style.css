@@ -2,58 +2,74 @@
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
     2. Remove default margin
   */
-  * {
-    margin: 0;
-  }
-  /*
+* {
+  margin: 0;
+}
+/*
     Typographic tweaks!
     3. Add accessible line-height
     4. Improve text rendering
   */
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  /*
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
     5. Improve media defaults
   */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  /*
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
     6. Remove built-in form typography styles
   */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  /*
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
     7. Avoid text overflows
   */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  /*
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
     8. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
-  }
+#root,
+#__next {
+  isolation: isolate;
+}
 
-  /* parts recommend form the MDN articles  */
-  button,
-  input,
-  select,
-  textarea {
-    font-family: inherit;
-    font-size: 100%;
-  }
+/* parts recommend form the MDN articles  */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+}
 
 input,
 textarea,
@@ -65,13 +81,13 @@ button {
   box-sizing: border-box;
 }
 
-  /* end of the reset */
+/* end of the reset */
 
 body {
   background-color: lightgray;
   display: grid;
-  grid-template-columns: .2fr 5fr;
-  grid-template-rows: .2fr 2fr .2fr;
+  grid-template-columns: 0.2fr 5fr;
+  grid-template-rows: 0.2fr 2fr 0.2fr;
   height: 100vh;
 }
 
@@ -175,8 +191,6 @@ body {
 
 /* Style for the project space */
 
-
-
 /*Style for the footer */
 
 .footerContainer {
@@ -227,7 +241,7 @@ label {
   margin: 1rem;
 }
 
-.projectList > div > p > div{
+.projectList > div > p > div {
   background-color: lightblue;
   margin: 1rem;
   text-align: center;
@@ -246,7 +260,7 @@ label {
   margin: 1rem;
 }
 
-[class^="dB"]  {
+[class^="dB"] {
   background-color: lightblue;
   width: 30px;
   height: 30px;
@@ -256,7 +270,7 @@ label {
   background-image: url("./images/plus.svg");
 }
 
-.projectList > div > p > div{
+.projectList > div > p > div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -276,8 +290,6 @@ label {
   background-image: url("./images/delete.svg");
 }
 
-
-
 /* Form */
 
 dialog {
@@ -289,18 +301,18 @@ dialog {
 ::backdrop {
   background-color: lightgray;
   opacity: 0.75;
- }
+}
 
- dialog > form > p{
+dialog > form > p {
   padding-bottom: 5%;
- }
+}
 
- .confirm {
+.confirm {
   margin-left: 1rem;
- }
+}
 
- input:focus {
-  outline-color: rgb(61, 184, 201); 
+input:focus {
+  outline-color: rgb(61, 184, 201);
   box-shadow: 3px 3px 10px grey;
 }
 
@@ -308,21 +320,21 @@ dialog {
   border: 2px solid green;
   border-radius: 8px;
   background-color: greenyellow;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .cancel {
   border: 2px solid red;
   border-radius: 8px;
   background-color: rgb(230, 127, 127);
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 textarea {
   width: auto;
 }
 
-.checklist > input  {
+.checklist > input {
   display: inline-block;
   width: 50px;
 }
@@ -342,5 +354,3 @@ form {
 .cancel {
   cursor: pointer;
 }
-
-
