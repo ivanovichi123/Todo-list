@@ -38,9 +38,16 @@ function storageReceiver(
 
     let descriptionArray = [];
     let descriptionStorage = localStorage.getItem("Description");
-    if (descriptionStorage === "") {
+    // if (descriptionStorage === "") {
+    if (description === "" && descriptionStorage !== "") {
+      descriptionArray.push(descriptionStorage, "No description");
+    } else if (description === "") {
+      descriptionArray.push("No description");
+    } else if (description !== "" && descriptionStorage === "") {
       descriptionArray.push(description);
-    } else {
+    }
+    // }
+    else {
       descriptionArray.push(descriptionStorage, description);
     }
     localStorage.setItem("Description", descriptionArray);
@@ -56,7 +63,11 @@ function storageReceiver(
 
     let notesArray = [];
     let notesStorage = localStorage.getItem("Notes");
-    if (notesStorage === "") {
+    if (notes === "" && notesStorage !== "") {
+      notesArray.push(notesStorage, "No notes");
+    } else if (notes === "") {
+      notesArray.push("No notes");
+    } else if (notes !== "" && notes === "") {
       notesArray.push(notes);
     } else {
       notesArray.push(notesStorage, notes);
