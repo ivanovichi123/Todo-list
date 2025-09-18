@@ -1,22 +1,9 @@
-import { projectBlocks } from "./projectBlocks";
-import { updateSelector } from "./updateSelector";
 import { storageReceiver } from "./storageLogic";
 
 function storageEraser(Number, list) {
-  console.log("Before local storage");
-  for (let i = 0; i < localStorage.length; i++) {
-    console.log(
-      localStorage.key(i) +
-        "=[" +
-        localStorage.getItem(localStorage.key(i)) +
-        "]",
-    );
-  }
-
   function storageObtain() {
     let temporalTitle = localStorage.getItem("Title");
     let temporalTitleString = temporalTitle.split(",");
-    alert(Number);
     temporalTitleString.splice(Number, 1);
     localStorage.setItem("Title", temporalTitleString);
 
@@ -69,7 +56,6 @@ function storageEraser(Number, list) {
   function storageUpdate() {
     let theTotalProjects = localStorage.getItem("Number").split(",");
     let theListComparator = localStorage.getItem("List").split(",");
-    console.log(theListComparator);
     let theSelectorComparator = localStorage.getItem("Selector").split(",");
     let theProjects = localStorage.getItem("ProjectArray").split(",");
     let projectsArray = [];
@@ -94,7 +80,6 @@ function storageEraser(Number, list) {
       }
       listUpdate.push(theListComparator[i]);
     }
-    console.log(theListComparator);
     localStorage.setItem("List", theListComparator);
   }
 
@@ -102,7 +87,6 @@ function storageEraser(Number, list) {
     let theProjects = localStorage.getItem("ProjectArray").split(",");
     let theGoodOrder = [];
     let theListComparator = localStorage.getItem("List").split(",");
-    console.log(theListComparator);
     let theSelectorComparator = localStorage.getItem("Selector").split(",");
     let theTotalProjects = localStorage.getItem("Number").split(",");
     for (let i = 0; i < theProjects.length; i++) {
@@ -115,7 +99,6 @@ function storageEraser(Number, list) {
         }
       }
     }
-    console.log(theGoodOrder);
     let theTitleOld = localStorage.getItem("Title").split(",");
     let theTitleNew = [];
     let theDescriptionOld = localStorage.getItem("Description").split(",");
@@ -127,7 +110,6 @@ function storageEraser(Number, list) {
     let thePriorityOld = localStorage.getItem("Priority").split(",");
     let thePriorityNew = [];
     let theListOld = localStorage.getItem("List").split(",");
-    console.log(theListOld);
     let theListNew = [];
     let theSelectorOld = localStorage.getItem("Selector").split(",");
     let theSelectorNew = [];
@@ -149,7 +131,6 @@ function storageEraser(Number, list) {
     localStorage.setItem("Priority", thePriorityNew);
     localStorage.setItem("Notes", theNotesNew);
     localStorage.setItem("DueDate", theDueDateNew);
-    console.log(theListNew);
     localStorage.setItem("List", theListNew);
   }
 
@@ -157,21 +138,6 @@ function storageEraser(Number, list) {
   storageUpdate();
   Reorder();
   storageReceiver(0, 0, 0, 0, 0, 0, 0, 0, 0, "Update");
-
-  console.log("After local storage");
-  for (let i = 0; i < localStorage.length; i++) {
-    console.log(
-      localStorage.key(i) +
-        "=[" +
-        localStorage.getItem(localStorage.key(i)) +
-        "]",
-    );
-  }
 }
 
 export { storageEraser };
-
-//Tiene que haber 3 casos de borrado:
-//Borrar y agregar de una misma seleccion
-//Borrar y garegar de selecciones distintas
-//Al no haber nada no hacer nada

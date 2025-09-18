@@ -1,5 +1,3 @@
-import { projectBlocks } from "./projectBlocks";
-
 import { storageReceiver } from "./storageLogic";
 
 function addButton() {
@@ -34,11 +32,8 @@ function addButton() {
       "input[name = checklists]:checked",
     ).value;
     if (favDialog.returnValue === "" || favDialog.returnValue === "cancel") {
-      alert("I enter 1");
       return;
     } else {
-      alert("I enter 2");
-      // projectBlocks(titleInfo,descriptionInfo,dueDateInfo,notesInfo,priorityInfo,listInfo,listSelectorInfo,projectListArray,counter);
       if (listInfo !== "") {
         projectListArray.push(listInfo);
       }
@@ -54,8 +49,6 @@ function addButton() {
         counter,
       );
       counter += 1;
-      // updateSelector(projectListArray);
-      console.log(projectListArray);
     }
   });
 
@@ -116,7 +109,6 @@ function addButton() {
   });
 
   const defaultList = () => {
-    console.log("I am the default list", projectListArray);
     if (localStorage.length === 0) {
       projectListArray.push("Example list");
       storageReceiver(
@@ -132,7 +124,6 @@ function addButton() {
         "firstLoad",
       );
       counter += 1;
-      console.log(projectListArray);
     } else {
       storageReceiver("", "", "", "", "", "", "", "", "", "firstLoad");
     }

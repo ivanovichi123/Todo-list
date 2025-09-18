@@ -4,6 +4,7 @@ function initialSidebar() {
   // Declare the object that will store the img
   let imgArray = {};
   let pArray = {};
+
   // Create all the elements
   const today = new Date().toISOString().split("T")[0];
   const theAddDialog = document.createElement("dialog");
@@ -23,6 +24,7 @@ function initialSidebar() {
   const theUpcomingTagText = document.createElement("p");
   const theAddMoreTagText = document.createElement("p");
   const theProfilePictureText = document.createElement("p");
+
   // Add a class to all the elements
   theSidebarContainer.classList.add("sidebarContainer");
   theFriendTag.classList.add("friendTag");
@@ -39,6 +41,7 @@ function initialSidebar() {
   theUpcomingTagText.classList.add("upcomingTaskText");
   theAddMoreTagText.classList.add("addMoreTagText");
   theProfilePictureText.classList.add("profilePictureText");
+
   // Store all of the elements in an array
   let sidebarContentsArray = [
     theProfilePicture,
@@ -134,34 +137,41 @@ function initialSidebar() {
     const theButtonSpace = document.createElement("div");
     const cancelButton = document.createElement("button");
     const confirmButton = document.createElement("button");
+
     //Create the description elements
     const theDescriptionText = document.createElement("p");
     const theDescriptionLabel = document.createElement("label");
     const theDescriptionInput = document.createElement("textarea");
     const theDescriptionLabelBr = document.createElement("br");
+
     //Create the dueDate elements
     const theDueDateText = document.createElement("p");
     const theDueDateLabel = document.createElement("label");
     const theDueDateInput = document.createElement("input");
     const theDueDateBr = document.createElement("br");
+
     //Create the note elements
     const theNotesText = document.createElement("p");
     const theNotesLabel = document.createElement("label");
     const theNotesInput = document.createElement("textarea");
     const theNotesBr = document.createElement("br");
+
     //Create the priority elements
     const thePrioryText = document.createElement("p");
     const thePriorityLabel = document.createElement("label");
     const thePriorityInput = document.createElement("input");
+
     // Create the project list elements
     const theListText = document.createElement("p");
     const theListLabel = document.createElement("label");
     const theListInput = document.createElement("input");
+
     //Create the project list selector
     const theListSelectorText = document.createElement("p");
     const theListSelectorTitle = document.createElement("p");
     const theListSelectorLabel = document.createElement("label");
     const theListSelectorInput = document.createElement("input");
+
     //Add text
     theFormLabel.textContent = "Write a title*: ";
     theDescriptionLabel.textContent = "Add a description: ";
@@ -173,6 +183,7 @@ function initialSidebar() {
     theListSelectorLabel.textContent = "None";
     cancelButton.textContent = "Cancel";
     confirmButton.textContent = "Confirm";
+
     //Append the elements
     theFormLabel.append(theLabelBr, theTitleInput);
     theDescriptionLabel.append(theDescriptionLabelBr, theDescriptionInput);
@@ -204,6 +215,7 @@ function initialSidebar() {
     );
     theAddDialog.appendChild(theForm);
     document.querySelector(".p6").appendChild(theAddDialog);
+
     //Add id, classes and properties
     theTitleInput.setAttribute("placeholder", "My first project");
     theTitleInput.setAttribute("value", "Ivan");
@@ -238,6 +250,7 @@ function initialSidebar() {
     theListInput.setAttribute("value", "School");
     theListInput.setAttribute("type", "text");
     theAddDialog.classList.add("favDialog");
+
     //The selector attributes and classes
     theListSelectorTitle.classList.add("checklistB");
     theListSelectorInput.setAttribute("type", "radio");
@@ -260,5 +273,4 @@ function initialSidebar() {
   addButtonLogic();
   addButton();
 }
-// `
 export { initialSidebar };

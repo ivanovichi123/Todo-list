@@ -6,6 +6,7 @@ function theListEraser(theNumber, theList) {
   let theClass = document.querySelector(`.DI${theNumber}`);
   let theClassParent = theClass.parentElement;
   let theClassParentParent = theClassParent.parentElement;
+
   //Remove the class
   theClass.remove();
 
@@ -20,7 +21,6 @@ function theListEraser(theNumber, theList) {
     }
     updateSelector(theList);
     //Update the storage
-    alert("I call the 28 eraser");
     storageEraser(theNumber, theList);
     return;
   };
@@ -29,10 +29,8 @@ function theListEraser(theNumber, theList) {
     theClassParentParent.remove();
     makingTheList();
   } else {
-    alert("I call the 38 eraser");
     storageEraser(theNumber, false);
   }
 }
 
-// `
 export { theListEraser };

@@ -1,5 +1,4 @@
 import { theListEraser } from "./eraseLogic";
-import { storageReceiver } from "./storageLogic";
 
 function projectBlocks(
   title,
@@ -13,7 +12,6 @@ function projectBlocks(
   number,
 ) {
   let temporalTitle = title;
-  console.log("the title", title);
   let temporalDescription = description;
   let temporalDueDate = dueDate;
   let temporalNotes = notes;
@@ -33,6 +31,7 @@ function projectBlocks(
     const temporalButton = document.createElement("button");
     const temporalDialogClose = document.createElement("button");
     const eraseList = document.createElement("button");
+
     //Add classes
     titleContainer.classList.add(`pT${number}`);
     descriptionContainer.classList.add(`pD${number}`);
@@ -44,16 +43,12 @@ function projectBlocks(
     temporalButton.classList.add(`dB${number}`);
     temporalDialogClose.classList.add(`dDC${number}`);
     eraseList.classList.add(`dDB${number}`);
+
     //Add the block to its respective project list
-    console.log("WHAT " + temporalList);
-    console.log(temporalList === "");
     if (temporalList === "") {
       //The if is when the list has something and it append to an existing block
-      alert("I enter the if");
       for (let i = 0; i < projectArray.length; i++) {
-        alert("I enter the for");
         if (temporalSelector === projectArray[i]) {
-          console.log("I enter the if");
           let temporalListBlock = document.createElement("div");
           temporalDialog.append(
             descriptionContainer,
@@ -70,8 +65,6 @@ function projectBlocks(
             eraseList,
           );
           let fixTemporalSelector = temporalSelector.replaceAll(" ", "-");
-          console.log(fixTemporalSelector);
-          console.log(temporalListBlock);
           temporalListBlock.classList.add(`DI${number}`);
           document
             .querySelector(`.${fixTemporalSelector}P`)
@@ -80,7 +73,7 @@ function projectBlocks(
         }
       }
     }
-    console.log(projectArray);
+
     //Add this "-" when encounter spaces
     let fixTemporalList = temporalList.replaceAll(" ", "-");
     let listBlock = document.createElement("div");
@@ -124,7 +117,6 @@ function projectBlocks(
     let theDiv = document.querySelector(`.DI${number}`);
     let thePriority = document.querySelector(`.pP${number}`);
     let thePriorityNumber = thePriority.innerHTML.slice(-1);
-    console.log(thePriorityNumber);
     if (thePriorityNumber === "1") {
       theDiv.style.backgroundColor = "rgb(207, 75, 75)";
     } else if (thePriorityNumber === "2") {
@@ -166,8 +158,6 @@ function projectBlocks(
   colorChanger();
   showDialog();
   eraseAList();
-  //Update the storage
 }
 
-// `
 export { projectBlocks };

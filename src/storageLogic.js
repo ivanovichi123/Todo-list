@@ -25,7 +25,7 @@ function storageReceiver(
     "ProjectArray",
     "Number",
   ];
-  console.log(list);
+
   function storageSaver() {
     let titleArray = [];
     let titleStorage = localStorage.getItem("Title");
@@ -90,7 +90,6 @@ function storageReceiver(
     } else {
       listArray.push(listStorage, list);
     }
-    alert(list);
     localStorage.setItem("List", listArray);
 
     let selectorArray = [];
@@ -103,7 +102,6 @@ function storageReceiver(
     localStorage.setItem("Selector", selectorArray);
 
     let projectArrayList = localStorage.getItem("ProjectArray").split(",");
-    //AQUI TE QUEDASTE if project array === "" -> localStorage.setItem("project array", newprojectArray);
     let theDeterminer = 0;
     let newProjectArray = "";
     if (list !== "") {
@@ -112,7 +110,6 @@ function storageReceiver(
       newProjectArray = selector;
     }
     if (localStorage.getItem("ProjectArray") === "") {
-      alert("I enter the if ");
       localStorage.setItem("ProjectArray", newProjectArray);
     } else {
       for (let theC = 0; theC < projectArrayList.length; theC++) {
@@ -141,46 +138,31 @@ function storageReceiver(
     document.querySelector(".projectList").textContent = "";
     let theSplit = [];
     for (let i = 0; i < localStorage.length; i++) {
-      // let storageUnit = (localStorage.getItem(localStorage.key(i)));
-      // theSplit.push(storageUnit.split(","));
-
       let storageUnitDemo = localStorage.getItem(storageKeyItems[i]);
-      console.log("The storage unit demo", storageKeyItems[i], storageUnitDemo);
       theSplit.push(storageUnitDemo.split(","));
     }
-    console.log(theSplit);
     for (let j = 0; j < theSplit[0].length; j++) {
       let theUnitTitle = theSplit[0][j];
-      console.log("title", theUnitTitle);
 
       let theUnitDescription = theSplit[1][j];
-      console.log("description", theUnitDescription);
 
       let theUnitDueDate = theSplit[2][j];
-      console.log("Date", theUnitDueDate);
 
       let theUnitNotes = theSplit[3][j];
-      console.log("Notes", theUnitNotes);
 
       let theUnitPriority = theSplit[4][j];
-      console.log("Priority", theUnitPriority);
 
       let theUnitList = theSplit[5][j];
-      console.log("List", theUnitList);
 
       let theUnitSelector = theSplit[6][j];
-      console.log("selector", theUnitSelector);
 
       let theUnitProjectArray = theSplit[7];
-      console.log("Project array", theUnitProjectArray);
 
       let theUnitNumber = theSplit[8][j];
-      console.log("Number", theUnitNumber);
 
       if (theUnitTitle === "") {
         return;
       }
-      console.log("Project Array " + theUnitProjectArray);
       updateSelector(theUnitProjectArray);
       projectBlocks(
         theUnitTitle,
@@ -193,13 +175,10 @@ function storageReceiver(
         theUnitProjectArray,
         theUnitNumber,
       );
-      // function projectBlocks (title,description,dueDate,notes,priority,list,selector,projectArray,number)
     }
   }
 
-  // localStorage.clear();
   if (localStorage.length === 0) {
-    console.log("I am here because the storage is empty");
     localStorage.setItem("Title", title);
     localStorage.setItem("Description", description);
     localStorage.setItem("DueDate", dueDate);
@@ -211,44 +190,17 @@ function storageReceiver(
     localStorage.setItem("Number", number);
     storageDivider();
 
-    console.log("local storage");
-    for (let i = 0; i < localStorage.length; i++) {
-      console.log(
-        localStorage.key(i) +
-          "=[" +
-          localStorage.getItem(localStorage.key(i)) +
-          "]",
-      );
-    }
-
     return;
   }
 
   if (localStorage.length !== 0 && load === "firstLoad") {
-    console.log("I enter 1");
     storageDivider();
   } else if (load === "Update") {
-    console.log("I enter 2");
     storageDivider();
   } else {
-    console.log("I enter 3");
     storageSaver();
     storageDivider();
-  }
-
-  console.log("local storage");
-  for (let i = 0; i < localStorage.length; i++) {
-    console.log(
-      localStorage.key(i) +
-        "=[" +
-        localStorage.getItem(localStorage.key(i)) +
-        "]",
-    );
   }
 }
 
 export { storageReceiver };
-
-// localStorage.clear();
-// title,description,dueDate,notes,priority,list,selector,projectArray,number
-// Lo que falta es hacer la logica de cuando se elimina algo
