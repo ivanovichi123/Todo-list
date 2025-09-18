@@ -71,7 +71,6 @@ function storageReceiver(
       notesArray.push(notesStorage, notes);
     }
     localStorage.setItem("Notes", notesArray);
-    console.log(localStorage.getItem("Notes"));
 
     let priorityArray = [];
     let priorityStorage = localStorage.getItem("Priority");
