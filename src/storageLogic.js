@@ -38,7 +38,6 @@ function storageReceiver(
 
     let descriptionArray = [];
     let descriptionStorage = localStorage.getItem("Description");
-    // if (descriptionStorage === "") {
     if (description === "" && descriptionStorage !== "") {
       descriptionArray.push(descriptionStorage, "No description");
     } else if (description === "") {
@@ -46,7 +45,6 @@ function storageReceiver(
     } else if (description !== "" && descriptionStorage === "") {
       descriptionArray.push(description);
     }
-    // }
     else {
       descriptionArray.push(descriptionStorage, description);
     }
@@ -67,12 +65,13 @@ function storageReceiver(
       notesArray.push(notesStorage, "No notes");
     } else if (notes === "") {
       notesArray.push("No notes");
-    } else if (notes !== "" && notes === "") {
+    } else if (notes !== "" && notesStorage === "") {
       notesArray.push(notes);
     } else {
       notesArray.push(notesStorage, notes);
     }
     localStorage.setItem("Notes", notesArray);
+    console.log(localStorage.getItem("Notes"));
 
     let priorityArray = [];
     let priorityStorage = localStorage.getItem("Priority");
@@ -201,6 +200,7 @@ function storageReceiver(
     storageSaver();
     storageDivider();
   }
+
 }
 
 export { storageReceiver };
